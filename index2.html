@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js ss-preload" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Galeri</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+<body id="top">
+
+
+    <!-- # preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <!-- # page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- ## site header 
+        ================================================== -->
+
+
+        <!-- ## main content
+        ==================================================- -->
+        <main class="s-content">
+
+
+            <!-- ### intro
+            =<!-- end s-intro -->
+
+
+            <!-- ### about
+            ================================================== -->
+             <!-- end s-about -->
+
+
+            <!-- ### works
+            ================================================== -->
+            <section id="works" class="s-works target-section">
+
+
+                <div class="row works-portfolio">
+
+                    <div class="column lg-12" data-animate-block>
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Galery Works
+                        </h2>
+                        <p class="h1" data-animate-el>
+                            Here are some of my projects I have done lately. Feel free to check them out.
+                        </p>
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Gallery Filter</title>
+                            <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                        
+                                .container {
+                                    padding: 20px;
+                                }
+                        
+                                .filter {
+                                    margin-bottom: 20px;
+                                }
+                        
+                                .gallery {
+                                    display: grid;
+                                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                                    gap: 15px;
+                                }
+                        
+                                .gallery-item {
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                    overflow: hidden;
+                                    text-align: center;
+                                    padding: 5px;
+                                }
+                        
+                                .gallery-item img {
+                                    width: 300px;
+                                    height: 300px;
+                                    object-fit: cover;
+                                    display: block;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="container">
+                                <div class="filter">
+                                    <label for="filter-input">Filter by Category:</label>
+                                    <label for="filter-input">Category now just to have option : "Website" and "Sertifikat"</label>
+
+                                    <input type="text" id="filter-input" placeholder="Type category...">
+                                </div>
+                        
+                                <div class="gallery" id="gallery">
+                                    <div class="gallery-item" data-category="website">
+                                        <img src="images/portfolio/porto-login.png" alt="website">
+                                        <p>Website Login</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="website">
+                                        <img src="images/portfolio/porto-dashboard.png" alt="website">
+                                        <p>Website Dashboard</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="website">
+                                        <img src="images/portfolio/porto-kalkulator2.png" alt="website">
+                                        <p>Website Kalkulator</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="website">
+                                        <img src="images/portfolio/porto-game-tetris.png" alt="website">
+                                        <p>Game Tetris</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="website">
+                                        <img src="images/portfolio/porto-chart-tahunan.png" alt="website">
+                                        <p>Chart Tahunan</p>
+                                    </div>
+
+                                    <div class="gallery-item" data-category="Sertifikat">
+                                        <img src="images/portfolio/serti-js-inter.png" alt="Sertifikat">
+                                        <p>Sertifikat JS Intermedieate</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="Sertifikat">
+                                        <img src="images/portfolio/serti-javascript.jpg" alt="Sertifikat">
+                                        <p>Sertifikat JavaScript</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="Sertifikat">
+                                        <img src="images/portfolio/serti-html.jpg" alt="Sertifikat">
+                                        <p>Sertifikat HTML</p>
+                                    </div>
+                                    <div class="gallery-item" data-category="Sertifikat">
+                                        <img src="images/portfolio/serti-css.jpg" alt="Sertifikat">
+                                        <p>Sertifikat CSS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <script>
+                                // JavaScript for filtering the gallery
+                                document.getElementById('filter-input').addEventListener('input', function (e) {
+                                    const filterValue = e.target.value.toLowerCase();
+                                    const galleryItems = document.querySelectorAll('.gallery-item');
+                        
+                                    galleryItems.forEach(item => {
+                                        const category = item.getAttribute('data-category').toLowerCase();
+                                        if (category.includes(filterValue)) {
+                                            item.style.display = '';
+                                        } else {
+                                            item.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            </script>
+    
+                        
+
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end -s-pagewrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
